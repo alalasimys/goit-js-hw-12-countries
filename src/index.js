@@ -1,13 +1,13 @@
 import './styles.css';
+import '@pnotify/core/dist/PNotify.css';
 import '@pnotify/core/dist/BrightTheme.css';
 
 import { error } from '@pnotify/core';
+//import { defaults } from '@pnotify/core';
 
 import countryCardTpl from './templates/countryCardTpl.hbs';
 import countryListTpl from './templates/countryListTpl.hbs';
 import API from './js/fetchCountries';
-
-// defaultModules.set(PNotifyMobile, {});
 
 const debounce = require('lodash.debounce');
 const inputRef = document.querySelector('.country-input');
@@ -30,9 +30,8 @@ function onSearch(event) {
         }
         if (country.length > 10) {
           error({
-            title: 'Uh Oh!',
-            text:
-              "Something really terrible happened. You really need to read this, so I won't close automatically.",
+            delay: 2000,
+            text: 'Too many matches found. Please enter a more specific query!',
           });
         }
       })
