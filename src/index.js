@@ -38,6 +38,7 @@ function onSearch(event) {
       .catch(console.log)
       .finally(() => (inputValue = ''));
   }
+  cardContainerRef.innerHTML = '';
 }
 
 // console.dir(inputRef);
