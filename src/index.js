@@ -30,7 +30,7 @@ function onSearch(event) {
         }
         if (country.length > 10) {
           error({
-            delay: 2000,
+            delay: 4000,
             text: 'Too many matches found. Please enter a more specific query!',
           });
         }
