@@ -23,7 +23,7 @@ function onSearch(event) {
       .then(country => {
         // console.log(country);
         if (country.length === 1) {
-          return renderCountryCards(country);
+          return renderCountryCard(country);
         }
         if (country.length >= 2 && country.length <= 10) {
           return renderCountryList(country);
@@ -42,16 +42,16 @@ function onSearch(event) {
 }
 
 // console.dir(inputRef);
+function InsertMarkUp(markup) {
+  return (cardContainerRef.innerHTML = markup);
+}
 
-function renderCountryCards(country) {
-  const markup = countryCardTpl(...country);
+function renderCountryCard(country) {
   //console.log(markup);
-  cardContainerRef.innerHTML = markup;
+  InsertMarkUp(countryCardTpl(...country));
 }
 
 function renderCountryList(country) {
-  let markup = countryListTpl(country);
-
   // console.log(markup);
-  cardContainerRef.innerHTML = markup;
+  InsertMarkUp(countryListTpl(country));
 }
