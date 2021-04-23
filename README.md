@@ -17,5 +17,3 @@ Project is created with:
 - Pnotify
 
 - Rest Countries API
-Homework with using webpack, lodash and pnotify libraries and fetching api from
-Rest Countries API, arranging countries in search.
